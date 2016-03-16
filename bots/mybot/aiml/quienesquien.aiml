@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category>
+	<pattern>^ jugar ^</pattern>
+	<template>
+		Quieres jugar al quien es quien
+	</template>
+</category>
+
+
+<category>
+	<pattern>Si</pattern>
+	<that>QUIERES JUGAR AL QUIEN ES QUIEN</that>
+	<template>
+		Piensas un personaje o lo pienso yo
+	</template>
+</category>
+
+<category>
+	<pattern>^ yo ^</pattern>
+	<that>PIENSAS UN PERSONAJE O LO PIENSO YO</that>
+	<template>
+		<think>
+			<set name="personajes">
+				Alejandro 
+				Alfonso 
+				Antonio 
+				Cristina 
+				Gabriela 
+				Ivan 
+				Javier 
+				Juan 
+				Laura 
+				Luis 
+				Marco 
+				Maria 
+				Paco 
+				Pepe 
+				Sofia 
+				Sonia
+			</set>
+
+			
+
+			<set name="Pelo">rubio moreno marron calvo pelirrojo blanco negro</set>
+			<set name="Ojos">claros oscuros</set>
+			<set name="Gafas">si no</set>
+			<set name="Bigote">si no</set>
+			<set name="Barba">si no</set>
+			<set name="Genero">hombre mujer</set>
+			<set name="Piel">clara oscura</set>
+
+			<set name="ask">Pelo Ojos Gafas Bigote Barba Genero Piel</set>
+
+
+			<!-- <set name="pregunta1">¿Tiene barba?</set>
+			<set name="pregunta2">¿Tiene bigote?</set>
+			<set name="pregunta3">¿Es calvo?</set>
+			<set name="pregunta4">¿Es Claro su color de ojos?</set>
+			<set name="pregunta5">¿Es Oscuro su color de ojos?</set>
+			<set name="pregunta6">¿Tiene el pelo Negro?</set>
+			<set name="pregunta7">¿Tiene el pelo Rubio?</set>
+			<set name="pregunta8">¿Tiene el pelo Blanco?</set>
+			<set name="pregunta9">¿Tiene el pelo Pelirrojo?</set>
+			<set name="pregunta10">¿Tiene el pelo Marron?</set>
+			<set name="pregunta11">¿Tiene la piel Clara?</set>
+			<set name="pregunta12">¿Tiene la piel Oscura?</set>
+			<set name="pregunta13">¿Tiene gafas?</set>
+			<set name="pregunta14">¿Es Mujer?</set>
+			<set name="pregunta15">¿Es Hombre?</set> -->
+
+<!-- 
+			<set name="preguntas">
+				<set name="pre<set name="rasgo">gunta1">¿Tiene barba?</set>
+				<set name="pregunta2">¿Tiene bigote?</set>
+				<set name="pregunta3">¿Es calvo?</set>
+				<set name="pregunta4">¿Es Claro su color de ojos?</set>
+				<set name="pregunta5">¿Es Oscuro su color de ojos?</set>
+				<set name="pregunta6">¿Tiene el pelo Negro?</set>
+				<set name="pregunta7">¿Tiene el pelo Rubio?</set>
+				<set name="pregunta8">¿Tiene el pelo Blanco?</set>
+				<set name="pregunta9">¿Tiene el pelo Pelirrojo?</set>
+				<set name="pregunta10">¿Tiene el pelo Marron?</set>
+				<set name="pregunta11">¿Tiene la piel Clara?</set>
+				<set name="pregunta12">¿Tiene la piel Oscura?</set>
+				<set name="pregunta13">¿Tiene gafas?</set>
+				<set name="pregunta14">¿Es Mujer?</set>
+				<set name="pregunta15">¿Es Hombre?</set>
+			</set> -->
+
+			<!-- <set name="preguntas">
+				pregunta1
+				pregunta2
+				pregunta3
+				pregunta4
+				pregunta5
+				pregunta6
+				pregunta7
+				pregunta8
+				pregunta9
+				pregunta10
+				pregunta11
+				pregunta12
+				pregunta13
+				pregunta14
+				pregunta15
+			</set> -->
+
+			<!-- <set name="preguntas">pelos pieles generos gafas ojos barbas bigotes</set> -->
+
+			<!-- <set name="pelos">pregunta3 pregunta6 pregunta7 pregunta8 pregunta9 pregunta10</set>
+			<set name="pieles">pregunta11 pregunta12</set>
+			<set name="generos">pregunta14 pregunta15</set>
+			<set name="gafas">pregunta13</set>
+			<set name="ojos">pregunta4 pregunta5</set>
+			<set name="barbas">pregunta1</set>
+			<set name="bigotes">pregunta2</set>
+
+			<set name="preguntas">pelos pieles generos gafas ojos barbas bigotes</set> -->
+
+
+
+		</think>
+		<srai>HACER PREGUNTA</srai>
+	</template>
+</category>
+
+
+
+<category>
+<pattern>HACER PREGUNTA</pattern>
+<template>
+	<think>
+
+		<!-- EXTRAEMOS EL RASGO -->
+	<set name="rasgo"><srai>TOP <get name="ask"/></srai></set>
+	<!-- EXTRAEMOS EL VALOR -->
+	<set name="valorrasgo"><srai>TOP <get> <name><get name="rasgo"/></name></get></srai></set>
+	</think>
+	<!-- BUSCAMOS Y HACEMOS LA PREGUNTA -->
+	<set var="pregunta"><map><name><get name="rasgo"/></name><get name="valorrasgo"/></map></set>
+
+	<think>
+	<set name="topic">siono</set>
+	</think>
+</template>
+</category>
+
+
+<topic name="siono">
+<category>
+	<pattern>Si</pattern>
+	<template>
+		<think>
+			<!-- BORRAMOS LA PREGUNTA -->
+			<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
+
+
+			<set var="item">
+				<srai> ITERATE <get name="personajes"/> </srai>
+			</set>
+
+			<condition var="item">
+				<li value="end"></li>
+				<li> <get var="item"/>
+
+					<set var="busqueda"><map><name><get name="item"/></name><get name="rasgo"/></map></set>
+
+					<set var="iguales">
+					<srai>
+					COMPARE <get name="valorrasgo"/> WITH <get var="busqueda"/>
+					</srai>
+					</set>
+
+					<condition var="iguales">
+						<li value="YES"></li>
+						<li>
+							
+						</li>
+					</condition>
+
+
+					<think>
+					<set var="item">
+					<srai>NEXT</srai>
+					</set>
+					</think>
+					<loop/>
+				</li>
+			</condition>
+
+
+		</think>
+		
+
+
+		<think>
+		<set name="topic">unknown</set>
+		</think>
+		<srai>HACER PREGUNTA</srai>
+		
+	</template>
+</category>
+
+
+<category>
+	<pattern>No</pattern>
+	<template>
+		<think>
+		<set> <name><get name="rasgo"/></name><srai>removeitem 1 IN <get> <name><get name="rasgo"/></name></get></srai></set>
+		<!-- <set name="rasgo"><srai>REMAIN <get> <name><get name="rasgo"/></name></get></srai></set> -->
+	</think>
+
+		<think>
+		<set name="topic">unknown</set>
+		</think>
+		<srai>HACER PREGUNTA</srai>
+		
+	</template>
+</category>
+
+</topic>
+
+
+
+
+
+
+
+
+</aiml>
