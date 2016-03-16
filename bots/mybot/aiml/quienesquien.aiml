@@ -157,23 +157,27 @@
 			<!-- BORRAMOS LA PREGUNTA -->
 			<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
 
-
+			<!-- CARGAMOS EL SET DE PERSONAJES EN UN ITERADOR-->
 			<set var="item">
 				<srai> ITERATE <get name="personajes"/> </srai>
 			</set>
 
+			<!-- BUCLE QUE RECORRE EL SET -->
+
 			<condition var="item">
+				<!-- MIENTRAS NO SEA EL TERMINADOR -->
 				<li value="end"></li>
 				<li> <get var="item"/>
-
+					<!-- SACAMOS DEL MAP ASOCIADO AL PERSONAJE SU RESPUESTA A LA PREGUNTA -->
 					<set var="busqueda"><map><name><get name="item"/></name><get name="rasgo"/></map></set>
 
+					<!-- COMPARAMOS LA RESPUESTA -->
 					<set var="iguales">
 					<srai>
-					COMPARE <get name="valorrasgo"/> WITH <get var="busqueda"/>
+						COMPARE <get name="valorrasgo"/> WITH <get var="busqueda"/>
 					</srai>
 					</set>
-
+					<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
 					<condition var="iguales">
 						<li value="YES"></li>
 						<li>
