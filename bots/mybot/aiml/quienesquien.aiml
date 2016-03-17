@@ -23,6 +23,7 @@
 	<that>PIENSAS UN PERSONAJE O LO PIENSO YO</that>
 	<template>
 		<think>
+			<set name="sino">YES</set>
 			<set name="personajes">Alejandro Alfonso Antonio Cristina Gabriela Ivan Javier Juan Laura Luis Marco Maria Paco Pepe Sofia Sonia</set>
 
 			
@@ -140,6 +141,7 @@
 		<think>
 			<!-- BORRAMOS LA PREGUNTA -->
 			<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
+			<set name="sino">YES</set>
 		</think>
 		<srai>BORRAR PERSONAJE</srai>
 
@@ -229,19 +231,40 @@
 <category>
 	<pattern>No</pattern>
 	<template>
+
+		
 		<think>
 			<set> <name><get name="rasgo"/></name><srai>removeitem 1 IN <get> <name><get name="rasgo"/></name></get></srai></set>
+
+			<set var="cnt">
+				<srai>COUNT <get> <name><get name="rasgo"/></name></get></srai>
+			</set>
+
+			<condition var="cnt">
+				<li value="1">
+					<set name="valorrasgo"><srai>TOP <get> <name><get name="rasgo"/></name></get></srai></set>
+					<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
+					<set name="sino">YES</set>
+				</li>
+
+				<li><set name="sino">NO</set></li>
+			</condition>
+
+
+			lo que hay en el rasgo es : <get> <name><get name="rasgo"/></name></get>
+
 			<!-- <set name="rasgo"><srai>REMAIN <get> <name><get name="rasgo"/></name></get></srai></set> -->
 
 			<!-- CARGAMOS EL SET DE PERSONAJES EN UN ITERADOR-->
 
 
 		</think>
+		<srai>BORRAR PERSONAJE</srai>
 
-		<think>
+		<!-- <think>
 		<set name="topic">unknown</set>
 		</think>
-		<srai>HACER PREGUNTA</srai>
+		<srai>HACER PREGUNTA</srai> -->
 		
 	</template>
 </category>
@@ -276,7 +299,7 @@
 					</set>
 					<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
 					<condition var="iguales">
-						<li value="YES"></li>
+						<li> <value><get name="sino"/></value></li>
 						<li>
 
 							<!-- BUSCAMOS LA POSICION -->
