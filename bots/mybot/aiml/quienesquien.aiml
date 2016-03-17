@@ -136,26 +136,138 @@
 <category>
 	<pattern>Si</pattern>
 	<template>
-		<get name="personajes"/>
+		<!-- <get name="personajes"/> -->
 		<think>
 			<!-- BORRAMOS LA PREGUNTA -->
 			<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
+		</think>
+		<srai>BORRAR PERSONAJE</srai>
+
 
 			<!-- CARGAMOS EL SET DE PERSONAJES EN UN ITERADOR-->
+			<!-- <set var="item">
+				<srai> ITERATE <get name="personajes"/> </srai>
+			</set> -->
+
+			<!-- BUCLE QUE RECORRE EL SET -->
+		
+
+		<!-- 	<condition var="item"> -->
+				<!-- MIENTRAS NO SEA EL TERMINADOR -->
+				<!-- <li value="end"></li>
+				<li> <get var="item"/> -->
+					<!-- SACAMOS DEL MAP ASOCIADO AL PERSONAJE SU RESPUESTA A LA PREGUNTA -->
+					<!-- <set var="busqueda"><map><name><get var="item"/></name><get name="rasgo"/></map></set>
+					este es el valor de busqueda <get name="rasgo"/> -->
+					<!-- COMPARAMOS LA RESPUESTA -->
+					<!-- <set var="iguales">
+					<srai>
+						COMPARE <get name="valorrasgo"/> WITH <get var="busqueda"/>
+					</srai>
+					</set> -->
+					<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+					<!-- <condition var="iguales">
+						<li value="YES"></li>
+						<li> -->
+
+							<!-- BUSCAMOS LA POSICION -->
+							<!-- <set var="pos">
+								<srai>FINDITEM <get var="item"/> IN <get name="personajes"/></srai>
+							</set> -->
+							<!-- SI ES IGUAL LA BORRAMO -->
+							<!-- <set name="personajes">
+								<srai>
+									REMOVEITEM <get var="pos"/> IN <get name="personajes"/>
+								</srai>
+							</set>
+						</li>
+					</condition> -->
+
+					<!-- AVANZAMOS ITERACCIONES -->
+					<!-- <think>
+					<set var="item">
+					<srai>NEXT</srai>
+					</set>
+					</think>
+					<loop/>
+				</li>
+			</condition> -->
+
+
+		<!-- </think> -->
+		<!-- CONTAMOS NUMERO DE PERSONAJES -->
+		<!-- <think>
+			<set var="cantidad">
+				<srai>COUNT <get name="personajes"/></srai>
+			</set>
+		</think> -->
+
+		<!-- <get name="personajes"/> -->
+
+		<!-- SI SOLO QUEDA UNO TERMINAMOS SI NO VOLVEMOS A PREGUNTAR -->
+		<!-- <condition var="cantidad">
+			<li value="1">
+				<set var="encontrado"><srai>TOP <get name="personajes"/></srai></set>
+			</li>
+
+			<li value="0">
+				La respuestas no corresponden a ningun personaje. la proxima vez intenta jugar bien.
+			</li>
+
+			<li>
+				<think>
+				<set name="topic">unknown</set>
+				</think>
+				<srai>HACER PREGUNTA</srai>
+			</li>
+		</condition>  -->
+		
+	</template>
+</category>
+
+
+<category>
+	<pattern>No</pattern>
+	<template>
+		<think>
+			<set> <name><get name="rasgo"/></name><srai>removeitem 1 IN <get> <name><get name="rasgo"/></name></get></srai></set>
+			<!-- <set name="rasgo"><srai>REMAIN <get> <name><get name="rasgo"/></name></get></srai></set> -->
+
+			<!-- CARGAMOS EL SET DE PERSONAJES EN UN ITERADOR-->
+
+
+		</think>
+
+		<think>
+		<set name="topic">unknown</set>
+		</think>
+		<srai>HACER PREGUNTA</srai>
+		
+	</template>
+</category>
+
+</topic>
+
+
+
+<category>
+	<pattern>BORRAR PERSONAJE</pattern>
+	<template>
+			<think>
 			<set var="item">
 				<srai> ITERATE <get name="personajes"/> </srai>
 			</set>
+			</think>
 
 			<!-- BUCLE QUE RECORRE EL SET -->
-		</think>
-
+		
+			<think>
 			<condition var="item">
 				<!-- MIENTRAS NO SEA EL TERMINADOR -->
 				<li value="end"></li>
 				<li> <get var="item"/>
 					<!-- SACAMOS DEL MAP ASOCIADO AL PERSONAJE SU RESPUESTA A LA PREGUNTA -->
 					<set var="busqueda"><map><name><get var="item"/></name><get name="rasgo"/></map></set>
-					este es el valor de busqueda <get name="rasgo"/>
 					<!-- COMPARAMOS LA RESPUESTA -->
 					<set var="iguales">
 					<srai>
@@ -191,19 +303,27 @@
 			</condition>
 
 
-		<!-- </think> -->
+		</think>
 		<!-- CONTAMOS NUMERO DE PERSONAJES -->
-		<set var="cantidad">
-			<srai>COUNT <get name="personajes"/></srai>
-		</set>
+		<think>
+			<set var="cantidad">
+				<srai>COUNT <get name="personajes"/></srai>
+			</set>
+		</think>
 
-		<get name="personajes"/>
+		<!-- <get name="personajes"/> -->
 
 		<!-- SI SOLO QUEDA UNO TERMINAMOS SI NO VOLVEMOS A PREGUNTAR -->
+
 		<condition var="cantidad">
 			<li value="1">
 				<set var="encontrado"><srai>TOP <get name="personajes"/></srai></set>
 			</li>
+
+			<li value="0">
+				La respuestas no corresponden a ningun personaje. la proxima vez intenta jugar bien.
+			</li>
+
 			<li>
 				<think>
 				<set name="topic">unknown</set>
@@ -211,32 +331,8 @@
 				<srai>HACER PREGUNTA</srai>
 			</li>
 		</condition>
-		
 	</template>
 </category>
-
-
-<category>
-	<pattern>No</pattern>
-	<template>
-		<think>
-		<set> <name><get name="rasgo"/></name><srai>removeitem 1 IN <get> <name><get name="rasgo"/></name></get></srai></set>
-		<!-- <set name="rasgo"><srai>REMAIN <get> <name><get name="rasgo"/></name></get></srai></set> -->
-	</think>
-
-		<think>
-		<set name="topic">unknown</set>
-		</think>
-		<srai>HACER PREGUNTA</srai>
-		
-	</template>
-</category>
-
-</topic>
-
-
-
-
 
 
 
