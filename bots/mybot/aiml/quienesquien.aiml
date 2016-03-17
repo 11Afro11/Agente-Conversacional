@@ -24,6 +24,8 @@
 	<template>
 		<think>
 			<set name="sino">YES</set>
+			<set name="tramparasgo"></set>
+			<set name="trampavalorrasgo"></set>
 			<set name="personajes">Alejandro Alfonso Antonio Cristina Gabriela Ivan Javier Juan Laura Luis Marco Maria Paco Pepe Sofia Sonia</set>
 
 			
@@ -142,87 +144,14 @@
 			<!-- BORRAMOS LA PREGUNTA -->
 			<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
 			<set name="sino">YES</set>
+			<set name="tramparasgo">
+				ADDITEM <get name="rasgo"/> IN <get name="tramparasgo"/>
+			</set>
+			<set name="trampavalorrasgo">
+				ADDITEM <get name="valorrasgo"/> IN <get name="trampavalorrasgo"/>
+			</set>
 		</think>
 		<srai>BORRAR PERSONAJE</srai>
-
-
-			<!-- CARGAMOS EL SET DE PERSONAJES EN UN ITERADOR-->
-			<!-- <set var="item">
-				<srai> ITERATE <get name="personajes"/> </srai>
-			</set> -->
-
-			<!-- BUCLE QUE RECORRE EL SET -->
-		
-
-		<!-- 	<condition var="item"> -->
-				<!-- MIENTRAS NO SEA EL TERMINADOR -->
-				<!-- <li value="end"></li>
-				<li> <get var="item"/> -->
-					<!-- SACAMOS DEL MAP ASOCIADO AL PERSONAJE SU RESPUESTA A LA PREGUNTA -->
-					<!-- <set var="busqueda"><map><name><get var="item"/></name><get name="rasgo"/></map></set>
-					este es el valor de busqueda <get name="rasgo"/> -->
-					<!-- COMPARAMOS LA RESPUESTA -->
-					<!-- <set var="iguales">
-					<srai>
-						COMPARE <get name="valorrasgo"/> WITH <get var="busqueda"/>
-					</srai>
-					</set> -->
-					<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
-					<!-- <condition var="iguales">
-						<li value="YES"></li>
-						<li> -->
-
-							<!-- BUSCAMOS LA POSICION -->
-							<!-- <set var="pos">
-								<srai>FINDITEM <get var="item"/> IN <get name="personajes"/></srai>
-							</set> -->
-							<!-- SI ES IGUAL LA BORRAMO -->
-							<!-- <set name="personajes">
-								<srai>
-									REMOVEITEM <get var="pos"/> IN <get name="personajes"/>
-								</srai>
-							</set>
-						</li>
-					</condition> -->
-
-					<!-- AVANZAMOS ITERACCIONES -->
-					<!-- <think>
-					<set var="item">
-					<srai>NEXT</srai>
-					</set>
-					</think>
-					<loop/>
-				</li>
-			</condition> -->
-
-
-		<!-- </think> -->
-		<!-- CONTAMOS NUMERO DE PERSONAJES -->
-		<!-- <think>
-			<set var="cantidad">
-				<srai>COUNT <get name="personajes"/></srai>
-			</set>
-		</think> -->
-
-		<!-- <get name="personajes"/> -->
-
-		<!-- SI SOLO QUEDA UNO TERMINAMOS SI NO VOLVEMOS A PREGUNTAR -->
-		<!-- <condition var="cantidad">
-			<li value="1">
-				<set var="encontrado"><srai>TOP <get name="personajes"/></srai></set>
-			</li>
-
-			<li value="0">
-				La respuestas no corresponden a ningun personaje. la proxima vez intenta jugar bien.
-			</li>
-
-			<li>
-				<think>
-				<set name="topic">unknown</set>
-				</think>
-				<srai>HACER PREGUNTA</srai>
-			</li>
-		</condition>  -->
 		
 	</template>
 </category>
@@ -242,20 +171,23 @@
 
 			<condition var="cnt">
 				<li value="1">
-					<set name="valorrasgo"><srai>TOP <get> <name><get name="rasgo"/></name></get></srai></set>
-					<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
+					<set name="valorrasgo">
+						<srai>TOP <get> <name><get name="rasgo"/></name></get></srai>
+					</set>
+					<set name="ask">
+						<srai>REMAIN <get name="ask"/></srai>
+					</set>
 					<set name="sino">YES</set>
+					<set name="tramparasgo">
+						ADDITEM <get name="rasgo"/> IN <get name="tramparasgo"/>
+					</set>
+					<set name="trampavalorrasgo">
+						ADDITEM <get name="valorrasgo"/> IN <get name="trampavalorrasgo"/>
+					</set>
 				</li>
 
 				<li><set name="sino">NO</set></li>
 			</condition>
-
-
-			lo que hay en el rasgo es : <get> <name><get name="rasgo"/></name></get>
-
-			<!-- <set name="rasgo"><srai>REMAIN <get> <name><get name="rasgo"/></name></get></srai></set> -->
-
-			<!-- CARGAMOS EL SET DE PERSONAJES EN UN ITERADOR-->
 
 
 		</think>
@@ -340,7 +272,7 @@
 
 		<condition var="cantidad">
 			<li value="1">
-				<set var="encontrado"><srai>TOP <get name="personajes"/></srai></set>
+				<srai>ADIVINAR PERSONAJE</srai>
 			</li>
 
 			<li value="0">
@@ -357,6 +289,34 @@
 	</template>
 </category>
 
+
+<category>
+	<pattern>ADIVINAR PERSONAJE</pattern>
+	<template>
+		¿Es <set var="encontrado"><srai>TOP <get name="personajes"/></srai></set>?
+
+
+
+		<think>
+		<set name="topic">adivina</set>
+		</think>
+	</template>
+</category>
+
+<topic name="adivina">
+<category>
+	<pattern>Si</pattern>
+	<template>
+		¡¡¡¡Si esque soy el puto amo!!!!
+		estos son los atributos <get name="tramparasgo"/>
+		estos los rasgos <get name="trampavalorrasgo"/>
+		<think>
+			<set name="topic">unknown</set>
+		</think>
+	</template>
+</category>
+
+</topic>
 
 
 
