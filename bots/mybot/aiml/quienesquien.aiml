@@ -24,8 +24,8 @@
 	<template>
 		<think>
 			<set name="sino">YES</set>
-			<set name="tramparasgo"></set>
-			<set name="trampavalorrasgo"></set>
+			<set name="tramparasgo">end</set>
+			<set name="trampavalorrasgo">end</set>
 			<set name="personajes">Alejandro Alfonso Antonio Cristina Gabriela Ivan Javier Juan Laura Luis Marco Maria Paco Pepe Sofia Sonia</set>
 
 			
@@ -39,75 +39,6 @@
 			<set name="Piel">clara oscura</set>
 
 			<set name="ask">Pelo Ojos Gafas Bigote Barba Genero Piel</set>
-
-
-			<!-- <set name="pregunta1">¿Tiene barba?</set>
-			<set name="pregunta2">¿Tiene bigote?</set>
-			<set name="pregunta3">¿Es calvo?</set>
-			<set name="pregunta4">¿Es Claro su color de ojos?</set>
-			<set name="pregunta5">¿Es Oscuro su color de ojos?</set>
-			<set name="pregunta6">¿Tiene el pelo Negro?</set>
-			<set name="pregunta7">¿Tiene el pelo Rubio?</set>
-			<set name="pregunta8">¿Tiene el pelo Blanco?</set>
-			<set name="pregunta9">¿Tiene el pelo Pelirrojo?</set>
-			<set name="pregunta10">¿Tiene el pelo Marron?</set>
-			<set name="pregunta11">¿Tiene la piel Clara?</set>
-			<set name="pregunta12">¿Tiene la piel Oscura?</set>
-			<set name="pregunta13">¿Tiene gafas?</set>
-			<set name="pregunta14">¿Es Mujer?</set>
-			<set name="pregunta15">¿Es Hombre?</set> -->
-
-<!-- 
-			<set name="preguntas">
-				<set name="pre<set name="rasgo">gunta1">¿Tiene barba?</set>
-				<set name="pregunta2">¿Tiene bigote?</set>
-				<set name="pregunta3">¿Es calvo?</set>
-				<set name="pregunta4">¿Es Claro su color de ojos?</set>
-				<set name="pregunta5">¿Es Oscuro su color de ojos?</set>
-				<set name="pregunta6">¿Tiene el pelo Negro?</set>
-				<set name="pregunta7">¿Tiene el pelo Rubio?</set>
-				<set name="pregunta8">¿Tiene el pelo Blanco?</set>
-				<set name="pregunta9">¿Tiene el pelo Pelirrojo?</set>
-				<set name="pregunta10">¿Tiene el pelo Marron?</set>
-				<set name="pregunta11">¿Tiene la piel Clara?</set>
-				<set name="pregunta12">¿Tiene la piel Oscura?</set>
-				<set name="pregunta13">¿Tiene gafas?</set>
-				<set name="pregunta14">¿Es Mujer?</set>
-				<set name="pregunta15">¿Es Hombre?</set>
-			</set> -->
-
-			<!-- <set name="preguntas">
-				pregunta1
-				pregunta2
-				pregunta3
-				pregunta4
-				pregunta5
-				pregunta6
-				pregunta7
-				pregunta8
-				pregunta9
-				pregunta10
-				pregunta11
-				pregunta12
-				pregunta13
-				pregunta14
-				pregunta15
-			</set> -->
-
-			<!-- <set name="preguntas">pelos pieles generos gafas ojos barbas bigotes</set> -->
-
-			<!-- <set name="pelos">pregunta3 pregunta6 pregunta7 pregunta8 pregunta9 pregunta10</set>
-			<set name="pieles">pregunta11 pregunta12</set>
-			<set name="generos">pregunta14 pregunta15</set>
-			<set name="gafas">pregunta13</set>
-			<set name="ojos">pregunta4 pregunta5</set>
-			<set name="barbas">pregunta1</set>
-			<set name="bigotes">pregunta2</set>
-
-			<set name="preguntas">pelos pieles generos gafas ojos barbas bigotes</set> -->
-
-
-
 		</think>
 		<srai>HACER PREGUNTA</srai>
 	</template>
@@ -145,10 +76,10 @@
 			<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
 			<set name="sino">YES</set>
 			<set name="tramparasgo">
-				ADDITEM <get name="rasgo"/> IN <get name="tramparasgo"/>
+				<srai>ADDITEM <get name="rasgo"/> IN <get name="tramparasgo"/></srai>
 			</set>
 			<set name="trampavalorrasgo">
-				ADDITEM <get name="valorrasgo"/> IN <get name="trampavalorrasgo"/>
+				<srai>ADDITEM <get name="valorrasgo"/> IN <get name="trampavalorrasgo"/></srai>
 			</set>
 		</think>
 		<srai>BORRAR PERSONAJE</srai>
@@ -179,10 +110,10 @@
 					</set>
 					<set name="sino">YES</set>
 					<set name="tramparasgo">
-						ADDITEM <get name="rasgo"/> IN <get name="tramparasgo"/>
+						<srai>ADDITEM <get name="rasgo"/> IN <get name="tramparasgo"/></srai>
 					</set>
 					<set name="trampavalorrasgo">
-						ADDITEM <get name="valorrasgo"/> IN <get name="trampavalorrasgo"/>
+						<srai>ADDITEM <get name="valorrasgo"/> IN <get name="trampavalorrasgo"/></srai>
 					</set>
 				</li>
 
@@ -308,11 +239,114 @@
 	<pattern>Si</pattern>
 	<template>
 		¡¡¡¡Si esque soy el puto amo!!!!
-		estos son los atributos <get name="tramparasgo"/>
-		estos los rasgos <get name="trampavalorrasgo"/>
+		Lo que hay en rasgo es: <get name="tramparasgo"/>
+		Lo que hay en valor es: <get name="trampavalorrasgo"/>
 		<think>
 			<set name="topic">unknown</set>
 		</think>
+	</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<template>
+		Quien es
+	</template>
+</category>
+
+<category>
+	<pattern><set>personajesenteros</set></pattern>
+	<that>QUIEN ES</that>
+	<template>
+
+		Lo que hay en rasgo es: <get name="tramparasgo"/>
+		Lo que hay en valor es: <get name="trampavalorrasgo"/>
+
+		<think>
+			<set var="pers"><star/></set>
+			<set var="err">.</set>
+			<set var="erres">unknown</set>
+			<set var="ras">
+				<srai> ITERATE <get name="tramparasgo"/> </srai>
+			</set>
+			<set var="val">
+				<srai> ITERATE <get name="trampavalorrasgo"/> </srai>
+			</set>
+		</think>
+
+		RAS vale: <get var="ras"/>
+		VAL vale: <get var="val"/>
+
+		<!-- <think> -->
+			<condition var="ras">
+				<!-- MIENTRAS NO SEA EL TERMINADOR -->
+
+				RAS vale: <get var="ras"/>
+				VAL vale: <get var="val"/>
+
+				<li value="end"></li>
+				<li>
+					La persona es: <get var="pers"/>
+					La persona es: <star/>
+					<set var="busqueda"><map><name><get var="pers"/></name><get var="ras"/></map></set>
+					Busqueda vale: <get var="busqueda"/>
+					<set var="iguales">
+						<srai>
+							COMPARE <get var="val"/> WITH <get var="busqueda"/>
+						</srai>
+					</set>
+
+					<condition var="iguales">
+						<li value="YES"></li>
+						<li>
+							<condition var="ras">
+								<li value="Barba">
+									<set var="err">
+										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
+									</set>
+								</li>
+
+								<li value="Gafas">
+									<set var="err">
+										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
+									</set>
+								</li>
+
+								<li value="Bigote">
+									<set var="err">
+										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
+									</set>
+								</li>
+
+								<li value="Genero">
+									<set var="erres"><get var="ras"/></set>
+								</li>
+								<li>
+									<set var="err">
+										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
+									</set>
+									<set var="err">
+										<srai>ADDITEM <get var="val"/> IN <get var="err"/></srai>
+									</set>
+								</li>
+							</condition>
+						</li>
+					</condition>
+					<think>
+					<set var="ras">
+						<srai>NEXT</srai>
+					</set>
+					<set var="val">
+						<srai>NEXT</srai>
+					</set>
+					</think>
+					<loop/>
+				</li>
+			</condition>
+		<!-- </think> -->
+
+		Eso es mentira <star/> se diferencian en <get var="err"/>
+
 	</template>
 </category>
 
