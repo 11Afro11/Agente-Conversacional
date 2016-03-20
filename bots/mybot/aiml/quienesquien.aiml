@@ -91,6 +91,8 @@
 		
 		<think>
 			<set> <name><get name="rasgo"/></name><srai>removeitem 1 IN <get> <name><get name="rasgo"/></name></get></srai></set>
+		</think>
+		<think>
 
 			<set var="cnt">
 				<srai>COUNT <get> <name><get name="rasgo"/></name></get></srai>
@@ -115,11 +117,6 @@
 			</condition>
 		</think>
 		<srai>BORRAR PERSONAJE</srai>
-
-		<think>
-		<set name="topic">unknown</set>
-		</think>
-		<srai>HACER PREGUNTA</srai>
 		
 	</template>
 </category>
@@ -216,9 +213,11 @@
 <category>
 	<pattern>ADIVINAR PERSONAJE</pattern>
 	<template>
+		<think>
 		<set name="trampavalorrasgo">
 			<srai>ADDITEM <get name="valorrasgo"/> IN <get name="trampavalorrasgo"/></srai>
 		</set>
+		</think>
 		¿Es <set name="encontrado"><srai>TOP <get name="personajes"/></srai></set>?
 
 
@@ -254,15 +253,16 @@
 
 		<think>
 			<set var="pers"><star/></set>
-			<set var="err">.</set>
+			<set var="errmesi">.</set>
+			<set var="errmeno">.</set>
+			<set var="errsi">.</set>
+			<set var="errno">.</set>
 			<set var="erres">unknown</set>
+			<set var="errmes">unknown</set>
 			<set var="ras">
 				<srai> ITERATE <get name="trampa"/> </srai>
 			</set>
 		</think>
-
-		RAS vale: <get var="ras"/>
-		VAL vale: <get var="val"/>
 
 		<think>
 			<condition var="ras">
@@ -288,32 +288,89 @@
 						<li>
 							<condition var="ras">
 								<li value="Barba">
-									<set var="err">
-										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
-									</set>
+									<condition var="busqueda">
+										<li value="si">
+											<set var="errsi">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errsi"/></srai>
+											</set>
+
+											<set var="errmeno">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errmeno"/></srai>
+											</set>
+										</li>
+
+										<li>
+											<set var="errno">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errno"/></srai>
+											</set>
+
+											<set var="errmesi">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errmesi"/></srai>
+											</set>
+										</li>
+									</condition>
 								</li>
 
 								<li value="Gafas">
-									<set var="err">
-										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
-									</set>
+									<condition var="busqueda">
+										<li value="si">
+											<set var="errsi">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errsi"/></srai>
+											</set>
+
+											<set var="errmeno">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errmeno"/></srai>
+											</set>
+										</li>
+
+										<li>
+											<set var="errno">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errno"/></srai>
+											</set>
+
+											<set var="errmesi">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errmesi"/></srai>
+											</set>
+										</li>
+									</condition>
 								</li>
 
 								<li value="Bigote">
-									<set var="err">
-										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
-									</set>
+									<condition var="busqueda">
+										<li value="si">
+											<set var="errsi">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errsi"/></srai>
+											</set>
+
+											<set var="errmeno">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errmeno"/></srai>
+											</set>
+										</li>
+
+										<li>
+											<set var="errno">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errno"/></srai>
+											</set>
+
+											<set var="errmesi">
+												<srai>ADDITEM <get var="ras"/> IN <get var="errmesi"/></srai>
+											</set>
+										</li>
+									</condition>
 								</li>
 
 								<li value="Genero">
-									<set var="erres"><get var="ras"/></set>
+									<set var="erres"><map><name><get var="pers"/></name><get var="ras"/></map></set>
+									<set var="errmes"><map><name><get name="encontrado"/></name><get var="ras"/></map></set>
+
 								</li>
 								<li>
-									<set var="err">
-										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
+									<set var="errsi">
+										<srai>ADDITEM <get var="busquedaenc"/> IN <get var="err"/></srai>
 									</set>
-									<set var="err">
-										<srai>ADDITEM <get var="val"/> IN <get var="err"/></srai>
+
+									<set var="errsi">
+										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
 									</set>
 								</li>
 							</condition>
