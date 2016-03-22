@@ -46,6 +46,20 @@
 
 
 <category>
+	<pattern>^ tu ^</pattern>
+	<that>PIENSAS UN PERSONAJE O LO PIENSO YO</that>
+	<template>
+		
+
+
+
+
+
+
+
+
+
+<category>
 <pattern>HACER PREGUNTA</pattern>
 <template>
 	<think>
@@ -253,10 +267,9 @@
 
 		<think>
 			<set var="pers"><star/></set>
-			<set var="errmesi">.</set>
-			<set var="errmeno">.</set>
-			<set var="errsi">.</set>
-			<set var="errno">.</set>
+			<set var="err">,</set>
+			<set var="tiene">,</set>
+			<set var="notiene">,</set>
 			<set var="erres">unknown</set>
 			<set var="errmes">unknown</set>
 			<set var="ras">
@@ -290,22 +303,13 @@
 								<li value="Barba">
 									<condition var="busqueda">
 										<li value="si">
-											<set var="errsi">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errsi"/></srai>
-											</set>
-
-											<set var="errmeno">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errmeno"/></srai>
+											<set var="tiene">
+												<srai>ADDITEM <get var="ras"/> IN <get var="tiene"/></srai>
 											</set>
 										</li>
-
 										<li>
-											<set var="errno">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errno"/></srai>
-											</set>
-
-											<set var="errmesi">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errmesi"/></srai>
+											<set var="notiene">
+												<srai>ADDITEM <get var="ras"/> IN <get var="notiene"/></srai>
 											</set>
 										</li>
 									</condition>
@@ -314,22 +318,13 @@
 								<li value="Gafas">
 									<condition var="busqueda">
 										<li value="si">
-											<set var="errsi">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errsi"/></srai>
-											</set>
-
-											<set var="errmeno">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errmeno"/></srai>
+											<set var="tiene">
+												<srai>ADDITEM <get var="ras"/> IN <get var="tiene"/></srai>
 											</set>
 										</li>
-
 										<li>
-											<set var="errno">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errno"/></srai>
-											</set>
-
-											<set var="errmesi">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errmesi"/></srai>
+											<set var="notiene">
+												<srai>ADDITEM <get var="ras"/> IN <get var="notiene"/></srai>
 											</set>
 										</li>
 									</condition>
@@ -338,42 +333,36 @@
 								<li value="Bigote">
 									<condition var="busqueda">
 										<li value="si">
-											<set var="errsi">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errsi"/></srai>
-											</set>
-
-											<set var="errmeno">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errmeno"/></srai>
+											<set var="tiene">
+												<srai>ADDITEM <get var="ras"/> IN <get var="tiene"/></srai>
 											</set>
 										</li>
-
 										<li>
-											<set var="errno">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errno"/></srai>
-											</set>
-
-											<set var="errmesi">
-												<srai>ADDITEM <get var="ras"/> IN <get var="errmesi"/></srai>
+											<set var="notiene">
+												<srai>ADDITEM <get var="ras"/> IN <get var="notiene"/></srai>
 											</set>
 										</li>
 									</condition>
 								</li>
 
 								<li value="Genero">
-									<set var="erres"><map><name><get var="pers"/></name><get var="ras"/></map></set>
-									<set var="errmes"><map><name><get name="encontrado"/></name><get var="ras"/></map></set>
+									<set var="erres"><get var="busqueda"/></set>
+									<set var="errmes"><get var="busquedaenc"/></set>
 
 								</li>
 								<li>
-									<set var="errsi">
-										<srai>ADDITEM <get var="busquedaenc"/> IN <get var="err"/></srai>
+									<set var="tiene">
+										<srai>ADDITEM <get var="busqueda"/> IN <get var="tiene"/></srai>
 									</set>
-
-									<set var="errsi">
-										<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
+									<set var="tiene">
+										<srai>ADDITEM <get var="ras"/> IN <get var="tiene"/></srai>
 									</set>
 								</li>
 							</condition>
+
+							<!-- <set var="err">
+								<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
+							</set> -->
 						</li>
 					</condition>
 					<think>
@@ -385,8 +374,27 @@
 				</li>
 			</condition>
 		</think>
+<!-- 
+		el valor de erres es <get var="erres"/>
+		el valor del otro es <get var="errmes"/> -->
 
-		Eso es mentira <star/> se diferencian en <get var="err"/>
+		<condition var="erres">
+			<li value="unknown">
+				<condition var="tiene">
+					<li value=",">
+						<condition var="notiene">
+							<li value=","></li>
+							<li>Eso es mentira <star/> no tiene <get var="notiene"/> y tu me has dicho que si.</li>
+						</condition>
+					</li>
+					<li>Eso es mentira <star/> tiene <get var="tiene"/> y tu me has dicho que no.</li>
+				</condition>
+			</li>
+
+			<li>
+				Mentira <star/> es <get var="erres"/> y <get var="pers"/> es <get var="errmes"/>.
+			</li>
+		</condition>
 
 	</template>
 </category>

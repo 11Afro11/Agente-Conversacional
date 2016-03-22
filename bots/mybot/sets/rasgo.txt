@@ -1,0 +1,17 @@
+rubio 
+moreno 
+marron 
+calvo 
+pelirrojo 
+blanco 
+negro 
+claros 
+oscuros
+hombre 
+mujer
+clara 
+oscura
+barba
+bigote 
+gafas
+
