@@ -246,10 +246,31 @@
 <template>
 	<think>
 
+	<set var="cnt">
+		<srai>COUNT <get name="ask"/></srai>
+	</set>
+	<set var="pos"><srai>RANDOM <get var="cnt"/></srai></set>
+	<set name="rasgo">
+		<srai>
+			SELECTITEM <get var="pos"/> IN <get name="ask"/>
+		</srai>
+	</set>
+
+	<set var="cnt">
+		<srai>COUNT <get> <name><get name="rasgo"/></name></get></srai>
+	</set>
+	<set var="pos"><srai>RANDOM <get var="cnt"/></srai></set>
+
+	<set name="valorrasgo">
+		<srai>
+			SELECTITEM <get var="pos"/> IN <get> <name><get name="rasgo"/></name></get>
+		</srai>
+	</set>
+
 		<!-- EXTRAEMOS EL RASGO -->
-	<set name="rasgo"><srai>TOP <get name="ask"/></srai></set>
+	<!-- <set name="rasgo"><srai>TOP <get name="ask"/></srai></set> -->
 	<!-- EXTRAEMOS EL VALOR -->
-	<set name="valorrasgo"><srai>TOP <get> <name><get name="rasgo"/></name></get></srai></set>
+	<!-- <set name="valorrasgo"><srai>TOP <get> <name><get name="rasgo"/></name></get></srai></set> -->
 	</think>
 	<!-- BUSCAMOS Y HACEMOS LA PREGUNTA -->
 	<set var="pregunta"><map><name><get name="rasgo"/></name><get name="valorrasgo"/></map></set>
