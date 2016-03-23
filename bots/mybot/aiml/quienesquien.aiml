@@ -25,9 +25,7 @@
 		<think>
 			<set name="sino">YES</set>
 			<set name="trampa">end</set>
-			<set name="personajes">Alejandro Alfonso Antonio Cristina Gabriela Ivan Javier Juan Laura Luis Marco Maria Paco Pepe Sofia Sonia</set>
-
-			
+			<set name="personajes">Alejandro Alfonso Antonio Cristina Gabriela Ivan Javier Juan Laura Luis Marco Maria Paco Pepe Sofia Sonia</set>		
 
 			<set name="Pelo">rubio moreno marron calvo pelirrojo blanco negro</set>
 			<set name="Ojos">claros oscuros</set>
@@ -49,12 +47,196 @@
 	<pattern>^ tu ^</pattern>
 	<that>PIENSAS UN PERSONAJE O LO PIENSO YO</that>
 	<template>
-		
+		Ya he pensado en uno.
+		<think>
+		<set name="personajes">Alejandro Alfonso Antonio Cristina Gabriela Ivan Javier Juan Laura Luis Marco Maria Paco Pepe Sofia Sonia</set>		
+
+		<set name="Pelo">rubio moreno marron calvo pelirrojo blanco negro</set>
+		<set name="Ojos">claros oscuros</set>
+		<set name="Gafas">gafas</set>
+		<set name="Bigote">bigote</set>
+		<set name="Barba">barba</set>
+		<set name="Genero">hombre mujer</set>
+		<set name="Piel">clara oscura</set>
+
+		<set var="cnt">
+			<srai>COUNT <get name="personajes"/></srai>
+		</set>
+		<set var="pos"><srai>RANDOM <get var="cnt"/></srai></set>
+		<set name="elegida">
+			<srai>
+				SELECTITEM <get var="pos"/> IN <get name="personajes"/>
+			</srai>
+		</set>
+
+		la persona elegida es: <get name="elegida"/>
+	</think>
+	</template>
+</category>
+
+
+<category>
+	<pattern>^ <set>cabello</set> ^</pattern>
+	<template>
+		<think>
+		el valor introducido es: <star index="2"/>
+		<set var="busqueda"><map><name><get name="elegida"/></name>Pelo</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
 
 
 
+<category>
+	<pattern>^ <set>ojo</set> ^</pattern>
+	<template>
+		<think>
+		<set var="busqueda"><map><name><get name="elegida"/></name>Ojos</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
 
 
+
+<category>
+	<pattern>^ <set>gafa</set> ^</pattern>
+	<template>
+		<think>
+		<set var="busqueda"><map><name><get name="elegida"/></name>Gafas</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH si
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+
+<category>
+	<pattern>^ <set>barbas</set> ^</pattern>
+	<template>
+		<think>
+		<set var="busqueda"><map><name><get name="elegida"/></name>Barba</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH si
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+
+
+<category>
+	<pattern>^ <set>bigotes</set> ^</pattern>
+	<template>
+		<think>
+		<set var="busqueda"><map><name><get name="elegida"/></name>Bigote</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH si
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+
+<category>
+	<pattern>^ <set>sexo</set> ^</pattern>
+	<template>
+		<think>
+		<set var="busqueda"><map><name><get name="elegida"/></name>Genero</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+
+
+<category>
+	<pattern>^ <set>pieles</set> ^</pattern>
+	<template>
+		<think>
+		<set var="busqueda"><map><name><get name="elegida"/></name>Piel</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+
+<category>
+	<pattern>^ <set>personajesenteros</set> ^</pattern>
+	<template>
+		<think>
+		<set var="iguales">
+			<srai>
+				COMPARE <get name="elegida"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
 
 
 
