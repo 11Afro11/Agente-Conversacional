@@ -35,7 +35,7 @@
 			<set name="Genero">hombre mujer</set>
 			<set name="Piel">clara oscura</set>
 
-			<set name="ask">Genero Piel Ojos Gafas Pelo Bigote Barba</set>
+			<set name="ask">Genero Ojos Gafas Piel Pelo Bigote Barba</set>
 		</think>
 		<srai>HACER PREGUNTA</srai>
 	</template>
@@ -51,7 +51,7 @@
 		<think>
 		<set name="personajes">Alejandro Alfonso Antonio Cristina Gabriela Ivan Javier Juan Laura Luis Marco Maria Paco Pepe Sofia Sonia</set>		
 
-		<set name="Pelo">rubio moreno marron calvo pelirrojo blanco negro</set>
+		<set name="Pelo">rubio moreno marron calvo pelirrojo blanco</set>
 		<set name="Ojos">claros oscuros</set>
 		<set name="Gafas">gafas</set>
 		<set name="Bigote">bigote</set>
@@ -353,10 +353,10 @@
 						<srai>ADDITEM <get name="rasgo"/> IN <get name="trampa"/></srai>
 					</set>
 					
-					<!-- <set name="ask">
+					<set name="ask">
 						<srai>REMAIN <get name="ask"/></srai>
-					</set> -->
-					<set var="pos">
+					</set>
+					<!-- <set var="pos">
 						<srai>FINDITEM <get name="rasgo"/> IN <get name="ask"/></srai>
 					</set>
 
@@ -364,7 +364,7 @@
 						<srai>
 							REMOVEITEM <get var="pos"/> IN <get name="ask"/>
 						</srai>
-					</set>
+					</set> -->
 					<set name="sino">YES</set>
 				</li>
 
@@ -454,6 +454,11 @@
 
 		<condition var="cantidad">
 			<li value="1">
+				<think>
+				<set name="trampa">
+					<srai>ADDITEM <get name="rasgo"/> IN <get name="trampa"/></srai>
+				</set>
+			</think>
 				<srai>ADIVINAR PERSONAJE</srai>
 			</li>
 
@@ -523,6 +528,10 @@
 			<set var="ras">
 				<srai> ITERATE <get name="trampa"/> </srai>
 			</set>
+
+			el valor de trampa es <get name="trampa"/>
+
+			el valor de ras es <get var="ras"/>
 		</think>
 
 		<think>
@@ -533,7 +542,9 @@
 
 				<li value="end"></li>
 				<li>
-					<set var="busqueda"><map><name><get var="pers"/></name><get var="ras"/></map></set>
+					<!-- el valor de ras es <get var="ras"/> -->
+					<!-- <think> -->
+					<set var="busqueda"><map><name><get var="pers"/></name> <get var="ras"/></map></set>
 					Busqueda vale: <get var="busqueda"/>
 
 					<set var="busquedaenc"><map><name><get name="encontrado"/></name><get var="ras"/></map></set>
@@ -543,12 +554,15 @@
 							COMPARE <get var="busquedaenc"/> WITH <get var="busqueda"/>
 						</srai>
 					</set>
+					<!-- </think> -->
 
 					<condition var="iguales">
 						<li value="YES"></li>
 						<li>
+							<!-- <think> -->
 							<condition var="ras">
 								<li value="Barba">
+									<!-- <think> -->
 									<condition var="busqueda">
 										<li value="si">
 											<set var="tiene">
@@ -561,9 +575,11 @@
 											</set>
 										</li>
 									</condition>
+								<!-- </think> -->
 								</li>
 
 								<li value="Gafas">
+									<!-- <think> -->
 									<condition var="busqueda">
 										<li value="si">
 											<set var="tiene">
@@ -576,9 +592,11 @@
 											</set>
 										</li>
 									</condition>
+								<!-- </think> -->
 								</li>
 
 								<li value="Bigote">
+									<!-- <think> -->
 									<condition var="busqueda">
 										<li value="si">
 											<set var="tiene">
@@ -591,22 +609,27 @@
 											</set>
 										</li>
 									</condition>
+								<!-- </think> -->
 								</li>
 
 								<li value="Genero">
+									<!-- <think> -->
 									<set var="erres"><get var="busqueda"/></set>
 									<set var="errmes"><get var="busquedaenc"/></set>
-
+									<!-- </think> -->
 								</li>
 								<li>
+									<!-- <think> -->
 									<set var="tiene">
 										<srai>ADDITEM <get var="busqueda"/> IN <get var="tiene"/></srai>
 									</set>
 									<set var="tiene">
 										<srai>ADDITEM <get var="ras"/> IN <get var="tiene"/></srai>
 									</set>
+								<!-- </think> -->
 								</li>
 							</condition>
+						<!-- </think> -->
 
 							<!-- <set var="err">
 								<srai>ADDITEM <get var="ras"/> IN <get var="err"/></srai>
@@ -640,7 +663,7 @@
 			</li>
 
 			<li>
-				Mentira <star/> es <get var="erres"/> y <get var="pers"/> es <get var="errmes"/>.
+				Mentira <star/> es <get var="erres"/> y <get name="encontrado"/> es <get var="errmes"/>.
 			</li>
 		</condition>
 

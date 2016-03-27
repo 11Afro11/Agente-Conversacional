@@ -1,7 +1,7 @@
-pelo:pelirrojo
-ojos:oscuros
-piel:clara
-gafas:si
-bigote:si
-barba:no
-genero:hombre
+Pelo:pelirrojo
+Ojos:oscuros
+Piel:clara
+Gafas:si
+Bigote:si
+Barba:no
+Genero:hombre

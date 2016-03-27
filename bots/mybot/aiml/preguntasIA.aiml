@@ -166,7 +166,7 @@
 
 <category>
 <pattern>Como se consiguen puntos por participacion</pattern>
-<template>Participando en clase..</template>
+<template>Participando en clase para resolver los ejercicios</template>
 </category>
 
 <category>
@@ -385,7 +385,7 @@
 
 <category>
 <pattern>Puedo entregar la practica 1 sin hacer la tarea relativa al nivel 0</pattern>
-<template>Por poder se puede, pero vas a sacar un 0</template>
+<template>No puedes, la practica se puntuara con un 0</template>
 </category>
 
 <category>
@@ -401,7 +401,7 @@
 </category>
 
 <category>
-<pattern>^ asistir ^ <set>defensa</set> ^</pattern>
+<pattern>^ no ^ <set>asistir</set> ^ <set>defensa</set> ^</pattern>
 <template><srai>Que tengo que hacer si no puedo asistir a la sesion de practicas en la que me corresponde hacer la defensa de la practica 1</srai></template>
 </category>
 
@@ -425,7 +425,7 @@
 </category>
 
 <category>
-<pattern>^ vale ^ <set>examen</set> ^</pattern>
+<pattern>^ <set>nota</set> ^ <set>examen</set> ^</pattern>
 <template><srai>Que vale la primera prueba teorica</srai></template>
 </category>
 
@@ -449,7 +449,7 @@
 </category>
 
 <category>
-<pattern>^ <set>examen</set> ^ <set>ejercicios</set> ^</pattern>
+<pattern>^ examen * <set>ejercicios</set> ^</pattern>
 <template><srai>En que consiste el examen de ejercicios</srai></template>
 </category>
 
@@ -457,7 +457,7 @@
 
 <category>
 <pattern>Que ocurre si no quiero defender una practica</pattern>
-<template>Tu practica quedará desprotegida y presa de las malas notas se convertira en un 0</template>
+<template>Tu practica quedará desprotegida y presa de las malas notas, se convertira en un 0</template>
 </category>
 
 <category>
@@ -469,7 +469,7 @@
 
 <category>
 <pattern>Que debería hacer si no estoy seguro de poder superar el nivel 3 de la practica 1</pattern>
-<template>Presentarme al nivel 2</template>
+<template>Presentarte al nivel 2</template>
 </category>
 
 <category>
@@ -485,7 +485,7 @@
 </category>
 
 <category>
-<pattern>^ <set>practica</set> ^ asignatura ^</pattern>
+<pattern>^ <set>practica</set> ^ <set>asignatura</set> ^</pattern>
 <template><srai>Cuantas practicas entregables tiene la asignatura</srai></template>
 </category>
 
@@ -546,7 +546,7 @@
 </category>
 
 <category>
-<pattern>^ 15 ^ <set>nota</set> ^ asegura ^ <set>practica</set> ^</pattern>
+<pattern>^ 15 ^ <set>nota</set> ^ <set>aprobar</set> ^ <set>practica</set> ^</pattern>
 <template><srai>Sumo 15 puntos en las practicas que ya he hecho eso me asegura aprobar las practicas</srai></template>
 </category>
 
@@ -558,7 +558,7 @@
 </category>
 
 <category>
-<pattern>^ 20 ^ <set>nota</set> ^ asegura ^ <set>asignatura</set> ^</pattern>
+<pattern>^ 20 ^ <set>nota</set> ^ <set>aprobar</set> ^ <set>asignatura</set> ^</pattern>
 <template><srai>Sumo 20 puntos en las practicas que ya he hecho eso me asegura aprobar la asignatura</srai></template>
 </category>
 
@@ -603,7 +603,7 @@
 
 <category>
 <pattern>En las siguientes practicas hay tambien que programar</pattern>
-<template>No, en cuanto se acabe la practica 1 automaticamente cambiamos de carrera...</template>
+<template>Pues claro, somos informaticos</template>
 </category>
 
 <category>
