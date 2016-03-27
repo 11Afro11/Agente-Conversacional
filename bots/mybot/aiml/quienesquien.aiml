@@ -35,7 +35,7 @@
 			<set name="Genero">hombre mujer</set>
 			<set name="Piel">clara oscura</set>
 
-			<set name="ask">Pelo Ojos Gafas Bigote Barba Genero Piel</set>
+			<set name="ask">Genero Piel Ojos Gafas Pelo Bigote Barba</set>
 		</think>
 		<srai>HACER PREGUNTA</srai>
 	</template>
@@ -246,35 +246,36 @@
 <template>
 	<think>
 
-	<set var="cnt">
-		<srai>COUNT <get name="ask"/></srai>
+	<!-- <set var="cnt">
+		<srai>COUNT <get> <name><get name="ask"/></name></get></srai>
 	</set>
+
 	<set var="pos"><srai>RANDOM <get var="cnt"/></srai></set>
 	<set name="rasgo">
 		<srai>
-			SELECTITEM <get var="pos"/> IN <get name="ask"/>
+		SELECTITEM <get var="pos"/> IN <get name="ask"/>
 		</srai>
 	</set>
 
 	<set var="cnt">
 		<srai>COUNT <get> <name><get name="rasgo"/></name></get></srai>
 	</set>
-	<set var="pos"><srai>RANDOM <get var="cnt"/></srai></set>
 
+	<set var="pos"><srai>RANDOM <get var="cnt"/></srai></set>
 	<set name="valorrasgo">
 		<srai>
-			SELECTITEM <get var="pos"/> IN <get> <name><get name="rasgo"/></name></get>
+		SELECTITEM <get var="pos"/> IN <get> <name><get name="rasgo"/></name></get>
 		</srai>
-	</set>
+	</set> -->
+
 
 		<!-- EXTRAEMOS EL RASGO -->
-	<!-- <set name="rasgo"><srai>TOP <get name="ask"/></srai></set> -->
+	<set name="rasgo"><srai>TOP <get name="ask"/></srai></set>
 	<!-- EXTRAEMOS EL VALOR -->
-	<!-- <set name="valorrasgo"><srai>TOP <get> <name><get name="rasgo"/></name></get></srai></set> -->
+	<set name="valorrasgo"><srai>TOP <get> <name><get name="rasgo"/></name></get></srai></set>
 	</think>
 	<!-- BUSCAMOS Y HACEMOS LA PREGUNTA -->
 	<set var="pregunta"><map><name><get name="rasgo"/></name><get name="valorrasgo"/></map></set>
-
 	<think>
 	<set name="topic">siono</set>
 	</think>
@@ -288,12 +289,31 @@
 	<template>
 		<!-- <get name="personajes"/> -->
 		<think>
+<!-- 
+			<set var="pos">
+				<srai>FINDITEM <get name="rasgo"/> IN <get name="ask"/></srai>
+			</set>
+
+			<set name="ask">
+				<srai>
+					REMOVEITEM <get var="pos"/> IN <get name="ask"/>
+				</srai>
+			</set> -->
+
+
 			<!-- BORRAMOS LA PREGUNTA -->
 			<set name="ask"><srai>REMAIN <get name="ask"/></srai></set>
 			<set name="sino">YES</set>
 			<set name="trampa">
 				<srai>ADDITEM <get name="rasgo"/> IN <get name="trampa"/></srai>
 			</set>
+
+			los personajes son: <get name="personajes"/>
+			el rasgo buscado es: <get name="rasgo"/>
+			el valor del rasgo es: <get name="valorrasgo"/>
+			lo que queda en el set de rasgo es <get> <name><get name="rasgo"/></name></get>
+			lo que queda en el set de ask es <get name="ask"/>
+
 		</think>
 		<srai>BORRAR PERSONAJE</srai>
 		
@@ -307,6 +327,15 @@
 
 		
 		<think>
+			<!-- <set var="pos">
+				<srai>FINDITEM <get name="valorrasgo"/> IN <get> <name><get name="rasgo"/></name></get></srai>
+			</set>
+
+			<set> <name><get name="rasgo"/></name>
+				<srai>
+					REMOVEITEM <get var="pos"/> IN <get> <name><get name="rasgo"/></name></get>
+				</srai>
+			</set> -->
 			<set> <name><get name="rasgo"/></name><srai>removeitem 1 IN <get> <name><get name="rasgo"/></name></get></srai></set>
 		</think>
 		<think>
@@ -324,14 +353,28 @@
 						<srai>ADDITEM <get name="rasgo"/> IN <get name="trampa"/></srai>
 					</set>
 					
-					<set name="ask">
+					<!-- <set name="ask">
 						<srai>REMAIN <get name="ask"/></srai>
+					</set> -->
+					<set var="pos">
+						<srai>FINDITEM <get name="rasgo"/> IN <get name="ask"/></srai>
+					</set>
+
+					<set name="ask">
+						<srai>
+							REMOVEITEM <get var="pos"/> IN <get name="ask"/>
+						</srai>
 					</set>
 					<set name="sino">YES</set>
 				</li>
 
 				<li><set name="sino">NO</set></li>
 			</condition>
+			los personajes son: <get name="personajes"/>
+			el rasgo buscado es: <get name="rasgo"/>
+			el valor del rasgo es: <get name="valorrasgo"/>
+			lo que queda en el set de rasgo es <get> <name><get name="rasgo"/></name></get>
+			lo que queda en el set de ask es <get name="ask"/>
 		</think>
 		<srai>BORRAR PERSONAJE</srai>
 		
@@ -403,6 +446,8 @@
 			</set>
 		</think>
 
+		<!-- El numero de personajes es <get var="cantidad"/> -->
+
 		<!-- <get name="personajes"/> -->
 
 		<!-- SI SOLO QUEDA UNO TERMINAMOS SI NO VOLVEMOS A PREGUNTAR -->
@@ -449,7 +494,7 @@
 <category>
 	<pattern>Si</pattern>
 	<template>
-		¡¡¡¡Si esque soy el puto amo!!!!
+		¡¡¡¡He Ganado!!!!
 		<think>
 			<set name="topic">unknown</set>
 		</think>

@@ -2,6 +2,9 @@ aprobar
 pasar
 superar
 aprobado
+aprobada
 superado
 apruebo
+aprueba
+superarse
 supero

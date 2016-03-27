@@ -8,7 +8,7 @@
 </category>
 
 <category>
-<pattern>^ aprobar ^ <set>asignatura</set> ^</pattern>
+<pattern>^ <set>aprobar</set> ^ <set>asignatura</set> ^</pattern>
 <template><srai>COMO APRUEBO IA</srai></template>
 </category>
 
@@ -17,7 +17,7 @@
 
 <category>
 <pattern>Como hago para aprobar la teoria</pattern>
-<template>Aprobando los 3 parciales</template>
+<template>Aprobando el examen final con los 3 parciales de apoyo</template>
 </category>
 
 
@@ -36,7 +36,7 @@
 
 
 <category>
-<pattern>^ <set>aprobar</set> ^ practica ^</pattern>
+<pattern>^ <set>aprobar</set> ^ <set>practica</set> ^</pattern>
 <template><srai>COMO CONSIGO SUPERAR LA PARTE PRACTICA</srai></template>
 </category>
 
@@ -61,7 +61,7 @@
 </category>
 
 <category>
-<pattern>^ presentarme * septiembre ^</pattern>
+<pattern>^ <set>presentar</set> * septiembre ^</pattern>
 <template><srai>QUE PASA SI TENGO QUE PRESENTARME EN LA CONVOCATORIA DE SEPTIEMBRE</srai></template>
 </category>
 
@@ -73,7 +73,7 @@
 </category>
 
 <category>
-<pattern>^ examen * practicas * septiembre ^</pattern>
+<pattern>^ <set>practica</set> * septiembre ^</pattern>
 <template><srai>HAY EXAMEN DE PRACTICAS EN LA CONVOCATORIA DE SEPTIEMBRE</srai></template>
 </category>
 
@@ -97,7 +97,7 @@
 </category>
 
 <category>
-<pattern>^ <set>nota</set> ^ minima ^</pattern>
+<pattern>^ <set>nota</set> ^ <set>aprobar</set> ^</pattern>
 <template><srai>HAY NOTA MINIMA PARA APROBAR</srai></template>
 </category>
 
@@ -134,7 +134,7 @@
 </category>
 
 <category>
-<pattern>^ practica ^ <set>nota</set> ^ final ^</pattern>
+<pattern>^ <set>practica</set> ^ <set>nota</set> ^</pattern>
 <template><srai>CUANTO VALE CADA PRACTICA CON RESPECTO A LA NOTA FINAL</srai></template>
 </category>
 
@@ -146,7 +146,7 @@
 </category>
 
 <category>
-<pattern>^ participacion ^ <set>nota</set> ^ final ^</pattern>
+<pattern>^ <set>participar</set> ^ <set>nota</set> ^</pattern>
 <template><srai>CUANTO VALE LA PARTICIPACION CON RESPECTO A LA NOTA FINAL</srai></template>
 </category>
 
@@ -158,7 +158,7 @@
 </category>
 
 <category>
-<pattern>^ guion ^ <set>nota</set> ^ final ^</pattern>
+<pattern>^ guion ^ <set>practica</set> ^</pattern>
 <template><srai>CUANTO VALE CADA GUION DE PRACTICAS CON RESPECTO A LA NOTA FINAL</srai></template>
 </category>
 
@@ -178,7 +178,7 @@
 
 <category>
 <pattern>Que es lo minimo que necesito para aprobar la asignatura</pattern>
-<template>Un 3</template>
+<template>Un 3 en alguna de las partes de teoria o practicas</template>
 </category>
 
 
@@ -208,7 +208,7 @@
 
 
 <category>
-<pattern>^ grupo ^</pattern>
+<pattern>^ <set>grupo</set> ^</pattern>
 <template><srai>SE PUEDEN HACER LOS TRABAJOS EN GRUPO</srai></template>
 </category>
 
@@ -220,7 +220,7 @@
 </category>
 
 <category>
-<pattern>^ <set>ejercicios</set> ^ relaciones ^</pattern>
+<pattern>^ <set>ejercicios</set> ^</pattern>
 <template><srai>HAY QUE ENTREGAR LOS EJERCICIOS DE LAS RELACIONES DE PROBLEMAS</srai></template>
 </category>
 
@@ -317,7 +317,7 @@
 </category>
 
 <category>
-<pattern>^ vale ^ <set>practica</set> ^ <set>teoria</set> ^</pattern>
+<pattern>^ <set>practica</set> ^ <set>teoria</set> ^</pattern>
 <template><srai>CUANTO VALE LA PRACTICA Y LA TEORIA</srai></template>
 </category>
 
@@ -329,7 +329,7 @@
 </category>
 
 <category>
-<pattern>^ tutorias ^ <set>practica</set> ^</pattern>
+<pattern>^ <set>horario</set> ^ <set>practica</set> ^</pattern>
 <template><srai>CUAL ES EL HORARIO DE TUTORIAS DEL PROFESOR DE PRACTICAS</srai></template>
 </category>
 
@@ -353,7 +353,7 @@
 </category>
 
 <category>
-<pattern>^ <set>aprobar</set> ^ no ^ <set>practica</set> ^</pattern>
+<pattern>^ <set>aprobar</set> ^ <set>falta</set> ^ <set>practica</set> ^</pattern>
 <template><srai>SE PUEDE APROBAR LA PARTE PRACTICA DE LA ASIGNATURA SI NO PRESENTO UNA PRACTICA</srai></template>
 </category>
 
@@ -365,7 +365,7 @@
 </category>
 
 <category>
-<pattern>^ <set>nota</set> ^ minima ^ parte ^</pattern>
+<pattern>^ <set>nota</set> ^ <set>minimo</set> ^</pattern>
 <template><srai>CUAL ES LA NOTA MINIMA QUE TENGO QUE OBTENER EN CADA PARTE PARA HACER MEDIA</srai></template>
 </category>
 

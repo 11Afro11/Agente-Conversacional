@@ -1,3 +1,4 @@
 IA
 asignatura
 ia
+Inteligencia Artificial

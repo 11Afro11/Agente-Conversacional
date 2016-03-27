@@ -6,3 +6,4 @@ punto
 puntuaciones
 calificacion
 calificaciones
+sacar
