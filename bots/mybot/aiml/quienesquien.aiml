@@ -95,6 +95,28 @@
 	</template>
 </category>
 
+<category>
+	<pattern>^ <set>personajesenteros</set> ^ <set>cabello</set> ^</pattern>
+	<template>
+		<think>
+		<set var="pers"><star index="2"/></set>
+		el personaje es <get var="pers"/>
+		el valor introducido es: <star index="4"/>
+		<set var="busqueda"><map><name><get var="pers"/></name>Pelo</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="4"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
 
 
 <category>
@@ -105,6 +127,26 @@
 		<set var="iguales">
 			<srai>
 				COMPARE <get var="busqueda"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>^ <set>personajesenteros</set> ^ <set>ojo</set> ^</pattern>
+	<template>
+		<think>
+		<set var="pers"><star index="2"/></set>
+		<set var="busqueda"><map><name><get var="pers"/></name>Ojos</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="4"/>
 			</srai>
 		</set>
 	</think>
@@ -137,12 +179,52 @@
 	</template>
 </category>
 
+<category>
+	<pattern>^ <set>personajesenteros</set> ^ <set>gafa</set> ^</pattern>
+	<template>
+		<think>
+		<set var="pers"><star index="2"/></set>
+		<set var="busqueda"><map><name><get var="pers"/></name>Gafas</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH si
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
 
 <category>
 	<pattern>^ <set>barbas</set> ^</pattern>
 	<template>
 		<think>
 		<set var="busqueda"><map><name><get name="elegida"/></name>Barba</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH si
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>^ <set>personajesenteros</set> ^ <set>barbas</set> ^</pattern>
+	<template>
+		<think>
+		<set var="pers"><star index="2"/></set>
+		<set var="busqueda"><map><name><get var="pers"/></name>Barba</map></set>
 		<set var="iguales">
 			<srai>
 				COMPARE <get var="busqueda"/> WITH si
@@ -178,6 +260,26 @@
 	</template>
 </category>
 
+<category>
+	<pattern>^ <set>personajesenteros</set> ^ <set>bigotes</set> ^</pattern>
+	<template>
+		<think>
+		<set var="pers"><star index="2"/></set>
+		<set var="busqueda"><map><name><get var="pers"/></name>Bigote</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH si
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
 
 <category>
 	<pattern>^ <set>sexo</set> ^</pattern>
@@ -187,6 +289,26 @@
 		<set var="iguales">
 			<srai>
 				COMPARE <get var="busqueda"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>^ <set>personajesenteros</set> ^ <set>sexo</set> ^</pattern>
+	<template>
+		<think>
+		<set var="pers"><star index="2"/></set>
+		<set var="busqueda"><map><name><get var="pers"/></name>Genero</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="4"/>
 			</srai>
 		</set>
 	</think>
@@ -208,6 +330,26 @@
 		<set var="iguales">
 			<srai>
 				COMPARE <get var="busqueda"/> WITH <star index="2"/>
+			</srai>
+		</set>
+	</think>
+		<!-- SI SON IGUALES NO HACEMOS NADA, SI SON DISTINTAS BORRAMOS -->
+		<condition var="iguales">
+			<li value="YES">SI</li>
+			<li>NO</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>^ <set>personajesenteros</set> ^ <set>pieles</set> ^</pattern>
+	<template>
+		<think>
+		<set var="pers"><star index="2"/></set>
+		<set var="busqueda"><map><name><get var="pers"/></name>Piel</map></set>
+		<set var="iguales">
+			<srai>
+				COMPARE <get var="busqueda"/> WITH <star index="4"/>
 			</srai>
 		</set>
 	</think>

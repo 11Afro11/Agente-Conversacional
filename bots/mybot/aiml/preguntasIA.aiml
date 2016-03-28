@@ -138,7 +138,7 @@
 <template><srai>CUANTO VALE CADA PRACTICA CON RESPECTO A LA NOTA FINAL</srai></template>
 </category>
 
-<!-- Pregunta 13 -->
+<!-- Pregunta 11 -->
 
 <category>
 <pattern>Cuanto vale la participacion con respecto a la nota final</pattern>
@@ -150,7 +150,7 @@
 <template><srai>CUANTO VALE LA PARTICIPACION CON RESPECTO A LA NOTA FINAL</srai></template>
 </category>
 
-<!-- Pregunta 14 -->
+<!-- Pregunta 12 -->
 
 <category>
 <pattern>Cuanto vale cada guion de practicas con respecto a la nota final</pattern>
@@ -162,7 +162,7 @@
 <template><srai>CUANTO VALE CADA GUION DE PRACTICAS CON RESPECTO A LA NOTA FINAL</srai></template>
 </category>
 
-<!-- Pregunta 15 -->
+<!-- Pregunta 13 -->
 
 <category>
 <pattern>Como se consiguen puntos por participacion</pattern>
@@ -174,7 +174,7 @@
 <template><srai>COMO SE CONSIGUEN PUNTOS POR PARTICIPACION</srai></template>
 </category>
 
-<!-- Pregunta 16 -->
+<!-- Pregunta 14 -->
 
 <category>
 <pattern>Que es lo minimo que necesito para aprobar la asignatura</pattern>
@@ -187,7 +187,7 @@
 <template><srai>QUE ES LO MINIMO QUE NECESITO PARA APROBAR LA ASIGNATURA</srai></template>
 </category>
 
-<!-- Pregunta 17 -->
+<!-- Pregunta 15 -->
 
 <category>
 <pattern>Los trabajos son individuales</pattern>
@@ -199,7 +199,7 @@
 <template><srai>LOS TRABAJOS SON INDIVIDUALES</srai></template>
 </category>
 
-<!-- Pregunta 18 -->
+<!-- Pregunta 16 -->
 
 <category>
 <pattern>Se pueden hacer los trabajos en grupo</pattern>
@@ -212,7 +212,7 @@
 <template><srai>SE PUEDEN HACER LOS TRABAJOS EN GRUPO</srai></template>
 </category>
 
-<!-- Pregunta 19 -->
+<!-- Pregunta 17 -->
 
 <category>
 <pattern>Hay que entregar los ejercicios de las relaciones de problemas</pattern>
@@ -224,11 +224,11 @@
 <template><srai>HAY QUE ENTREGAR LOS EJERCICIOS DE LAS RELACIONES DE PROBLEMAS</srai></template>
 </category>
 
-<!-- Pregunta 20 -->
+<!-- Pregunta 18 -->
 
 <category>
 <pattern>Porque tengo que estudiar</pattern>
-<template>Porque el dinero no crece en los arboles... aunque el dinero esta hecho de papel y el papel si crece en los arboles...</template>
+<template>Para que tu inteligencia sea real y no artificial</template>
 </category>
 
 <category>
@@ -236,7 +236,7 @@
 <template><srai>PORQUE TENGO QUE ESTUDIAR</srai></template>
 </category>
 
-<!-- Pregunta 21 -->
+<!-- Pregunta 19 -->
 
 <category>
 <pattern>cuanto vale el primer examen de teoria</pattern>
@@ -249,7 +249,7 @@
 <template><srai>CUANTO VALE EL PRIMER EXAMEN DE TEORIA</srai></template>
 </category>
 
-<!-- Pregunta 22 -->
+<!-- Pregunta 20 -->
 
 <category>
 <pattern>Puedo tener nota mayor a 10</pattern>
@@ -261,7 +261,7 @@
 <template><srai>Puedo tener nota mayor a 10</srai></template>
 </category>
 
-<!-- Pregunta 23 -->
+<!-- Pregunta 21 -->
 
 <category>
 <pattern>Puedo recuperar una practica o examen</pattern>
@@ -273,7 +273,7 @@
 <template><srai>PUEDO RECUPERAR UNA PRACTICA O EXAMEN</srai></template>
 </category>
 
-<!-- Pregunta 24 -->
+<!-- Pregunta 22 -->
 
 <category>
 <pattern>Que pasa si me copio de otro estudiante</pattern>
@@ -285,7 +285,7 @@
 <template><srai>QUE PASA SI ME COPIO DE OTRO ESTUDIANTE</srai></template>
 </category>
 
-<!-- Pregunta 25 -->
+<!-- Pregunta 23 -->
 
 <category>
 <pattern>Que pasa si me dejo copiar de otro estudiante</pattern>
@@ -297,7 +297,7 @@
 <template><srai>QUE PASA SI ME DEJO COPIAR DE OTRO ESTUDIANTE</srai></template>
 </category>
 
-<!-- Pregunta 26 -->
+<!-- Pregunta 24 -->
 
 <category>
 <pattern>Y si suspendo la convocatoria de junio</pattern>
@@ -309,7 +309,7 @@
 <template><srai>Y SI SUSPENDO LA CONVOCATORIA DE JUNIO</srai></template>
 </category>
 
-<!-- Pregunta 27 -->
+<!-- Pregunta 25 -->
 
 <category>
 <pattern>Cuanto vale la practica y la teoria</pattern>
@@ -321,7 +321,7 @@
 <template><srai>CUANTO VALE LA PRACTICA Y LA TEORIA</srai></template>
 </category>
 
-<!-- Pregunta 28 -->
+<!-- Pregunta 26 -->
 
 <category>
 <pattern>Cual es el horario de tutorias del profesor de practicas</pattern>
@@ -333,7 +333,7 @@
 <template><srai>CUAL ES EL HORARIO DE TUTORIAS DEL PROFESOR DE PRACTICAS</srai></template>
 </category>
 
-<!-- Pregunta 29 -->
+<!-- Pregunta 27 -->
 
 <category>
 <pattern>Cual es el correo electronico del profesor de teoria</pattern>
@@ -345,7 +345,7 @@
 <template><srai>CUAL ES EL CORREO ELECTRONICO DEL PROFESOR DE TEORIA</srai></template>
 </category>
 
-<!-- Pregunta 30 -->
+<!-- Pregunta 28 -->
 
 <category>
 <pattern>Se puede aprobar la parte practica de la asignatura si no presento una practica</pattern>
@@ -357,7 +357,7 @@
 <template><srai>SE PUEDE APROBAR LA PARTE PRACTICA DE LA ASIGNATURA SI NO PRESENTO UNA PRACTICA</srai></template>
 </category>
 
-<!-- Pregunta 31 -->
+<!-- Pregunta 29 -->
 
 <category>
 <pattern>Cual es la nota minima que tengo que obtener en cada parte para hacer media</pattern>
@@ -369,7 +369,7 @@
 <template><srai>CUAL ES LA NOTA MINIMA QUE TENGO QUE OBTENER EN CADA PARTE PARA HACER MEDIA</srai></template>
 </category>
 
-<!-- Pregunta 32 -->
+<!-- Pregunta 30 -->
 
 <category>
 <pattern>Que puntuacion obtengo en la practica 1 si opto por defender el nivel 3 y no lo supero</pattern>
@@ -381,7 +381,7 @@
 <template><srai>QUE PUNTUACION OBTENGO EN LA PRACTICA 1 SI OPTO POR DEFENDER EL NIVEL 3 Y NO LO SUPERO</srai></template>
 </category>
 
-<!-- Pregunta 33 -->
+<!-- Pregunta 31 -->
 
 <category>
 <pattern>Puedo entregar la practica 1 sin hacer la tarea relativa al nivel 0</pattern>
@@ -393,7 +393,7 @@
 <template><srai>PUEDO ENTREGAR LA PRACTICA 1 SIN HACER LA TAREA RELATIVA AL NIVEL 0</srai></template>
 </category>
 
-<!-- Pregunta 34 -->
+<!-- Pregunta 32 -->
 
 <category>
 <pattern>Que tengo que hacer si no puedo asistir a la sesion de practicas en la que me corresponde hacer la defensa de la practica 1</pattern>
@@ -405,7 +405,7 @@
 <template><srai>Que tengo que hacer si no puedo asistir a la sesion de practicas en la que me corresponde hacer la defensa de la practica 1</srai></template>
 </category>
 
-<!-- Pregunta 35 -->
+<!-- Pregunta 33 -->
 
 <category>
 <pattern>Cuantas pruebas teoricas tendre a lo largo del curso</pattern>
@@ -417,7 +417,7 @@
 <template><srai>Cuantas pruebas teoricas tendre a lo largo del curso</srai></template>
 </category>
 
-<!-- Pregunta 36 -->
+<!-- Pregunta 34 -->
 
 <category>
 <pattern>Que vale la primera prueba teorica</pattern>
@@ -429,7 +429,7 @@
 <template><srai>Que vale la primera prueba teorica</srai></template>
 </category>
 
-<!-- Pregunta 37 -->
+<!-- Pregunta 35 -->
 
 <category>
 <pattern>En la parte teorica se tiene en cuenta la asistencia</pattern>
@@ -441,7 +441,7 @@
 <template><srai>En la parte teorica se tiene en cuenta la asistencia</srai></template>
 </category>
 
-<!-- Pregunta 38 -->
+<!-- Pregunta 36 -->
 
 <category>
 <pattern>En que consiste el examen de ejercicios</pattern>
@@ -453,7 +453,7 @@
 <template><srai>En que consiste el examen de ejercicios</srai></template>
 </category>
 
-<!-- Pregunta 39 -->
+<!-- Pregunta 37 -->
 
 <category>
 <pattern>Que ocurre si no quiero defender una practica</pattern>
@@ -465,7 +465,7 @@
 <template><srai>Que ocurre si no quiero defender una practica</srai></template>
 </category>
 
-<!-- Pregunta 40 -->
+<!-- Pregunta 38 -->
 
 <category>
 <pattern>Que debería hacer si no estoy seguro de poder superar el nivel 3 de la practica 1</pattern>
@@ -477,7 +477,7 @@
 <template><srai>Que debería hacer si no estoy seguro de poder superar el nivel 3 de la practica 1</srai></template>
 </category>
 
-<!-- Pregunta 41 -->
+<!-- Pregunta 39 -->
 
 <category>
 <pattern>Cuantas practicas entregables tiene la asignatura</pattern>
@@ -489,7 +489,7 @@
 <template><srai>Cuantas practicas entregables tiene la asignatura</srai></template>
 </category>
 
-<!-- Pregunta 42 -->
+<!-- Pregunta 40 -->
 
 <category>
 <pattern>Yo programo muy bien en C++ podria hacer las practicas en ese lenguaje</pattern>
@@ -502,7 +502,7 @@
 </category>
 
 
-<!-- Pregunta 43 -->
+<!-- Pregunta 41 -->
 
 <category>
 <pattern>Odio aiml podria hacer las practicas en otro lenguaje</pattern>
@@ -514,7 +514,7 @@
 <template><srai>Odio aiml podria hacer las practicas en otro lenguaje</srai></template>
 </category>
 
-<!-- Pregunta 44 -->
+<!-- Pregunta 42 -->
 
 <category>
 <pattern>Donde esta la oficina del profesor de practicas</pattern>
@@ -526,7 +526,7 @@
 <template><srai>Donde esta la oficina del profesor de practicas</srai></template>
 </category>
 
-<!-- Pregunta 45 -->
+<!-- Pregunta 43 -->
 
 <category>
 <pattern>Donde esta el despacho del profesor de teoria</pattern>
@@ -538,7 +538,7 @@
 <template><srai>Donde esta el despacho del profesor de teoria</srai></template>
 </category>
 
-<!-- Pregunta 46 -->
+<!-- Pregunta 44 -->
 
 <category>
 <pattern>Sumo 15 puntos en las practicas que ya he hecho eso me asegura aprobar las practicas</pattern>
@@ -550,7 +550,7 @@
 <template><srai>Sumo 15 puntos en las practicas que ya he hecho eso me asegura aprobar las practicas</srai></template>
 </category>
 
-<!-- Pregunta 47 -->
+<!-- Pregunta 45 -->
 
 <category>
 <pattern>Sumo 20 puntos en las practicas que ya he hecho eso me asegura aprobar la asignatura</pattern>
@@ -562,7 +562,7 @@
 <template><srai>Sumo 20 puntos en las practicas que ya he hecho eso me asegura aprobar la asignatura</srai></template>
 </category>
 
-<!-- Pregunta 48 -->
+<!-- Pregunta 46 -->
 
 <category>
 <pattern>Me incorpore tarde a la asignatura y no pude hacer la practica 1 puedo recuperar esa practica</pattern>
@@ -574,7 +574,7 @@
 <template><srai>Me incorpore tarde a la asignatura y no pude hacer la practica 1 puedo recuperar esa practica</srai></template>
 </category>
 
-<!-- Pregunta 49 -->
+<!-- Pregunta 47 -->
 
 <category>
 <pattern>Me incorpore tarde a la asignatura y no pude hacer la practica 1 tengo posibilidades de aprobar la parte practica</pattern>
@@ -586,7 +586,7 @@
 <template><srai>Me incorpore tarde a la asignatura y no pude hacer la practica 1 tengo posibilidades de aprobar la parte practica</srai></template>
 </category>
 
-<!-- Pregunta 50 -->
+<!-- Pregunta 48 -->
 
 <category>
 <pattern>Me encantan los agentes conversacionales y soy un experto en su constuccion podria usar agentes conversacionales para que vayan en mi lugar a hacer la defensa de practicas</pattern>
@@ -599,7 +599,7 @@
 <template><srai>Me encantan los agentes conversacionales y soy un experto en su constuccion podria usar agentes conversacionales para que vayan en mi lugar a hacer la defensa de practicas</srai></template>
 </category>
 
-<!-- Pregunta 51 -->
+<!-- Pregunta 49 -->
 
 <category>
 <pattern>En las siguientes practicas hay tambien que programar</pattern>
@@ -611,7 +611,7 @@
 <template><srai>En las siguientes practicas hay tambien que programar</srai></template>
 </category>
 
-<!-- Pregunta 52 -->
+<!-- Pregunta 50 -->
 
 <category>
 <pattern>El nivel 0 es muy facil el resto de la practica se complica mucho</pattern>
