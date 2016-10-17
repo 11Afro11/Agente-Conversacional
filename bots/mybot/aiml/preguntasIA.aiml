@@ -12,6 +12,13 @@
 <template><srai>COMO APRUEBO IA</srai></template>
 </category>
 
+<category>
+<pattern>^ <set>aprobar</set> ^ <set>asignatura</set> ^</pattern>
+<template><srai>COMO APRUEBO La mierda esta</srai></template>
+</category>
+
+
+powejfbñhdsbflhajdbflahdvflnablsdlfañbdjavsdlf agjdsvfkabdsflhjvaldvfjs jhs fbfk adfkb
 
 <!-- Pregunta 2 -->
 
@@ -626,4 +633,3 @@
 
 
 </aiml>
-
