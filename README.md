@@ -8,4 +8,4 @@ Responde a mensajes como hola, buenos días, que tal...
 
 Tambien juega con nosotros al Quien es Quien, pudiendo pensar el un personaje para que nosotros lo adivinemos y viceversa.
 
-En el caso de que nosotros pensemosel personaje, el agente reconoce si le estamos engañando y nos acusará de tramposos.
+En el caso de que nosotros pensemos el personaje, el agente reconoce si le estamos engañando y nos acusará de tramposos.
